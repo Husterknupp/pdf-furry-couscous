@@ -1,0 +1,16 @@
+{
+    "name": "pdf-scaler",
+    "version": "1.0.0",
+    "description": "PDF magic for researching tasks",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "husterknupp,patrichter",
+    "license": "ISC",
+    "dependencies": {},
+    "devDependencies": {
+        "prettier": "~2.3.2",
+        "yargs": "~17.0.1"
+    }
+}
