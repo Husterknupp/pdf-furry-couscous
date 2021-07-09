@@ -95,7 +95,7 @@ async function run() {
 
         // todo this is not needed I think - remove?
         // create a copy to work with (in case we fuck up something)
-        // copyFileSync(file.fileName, 'base.pdf');
+        copyFileSync(file.fileName, 'base.pdf');
 
         if (halve) {
             console.log(`Splitting into half`);
@@ -157,7 +157,8 @@ async function run() {
                 DRY_RUN
             );
         } else {
-            console.log(`mv combined.pdf ${file}_scaled.pdf`);
+            // todo DRY_RUN
+            console.log(`renameSync('combined.pdf', \`${file.fileName}_scaled.pdf\`)`);
             // renameSync('combined.pdf', `${file.fileName}_scaled.pdf`);
         }
 
@@ -174,7 +175,9 @@ async function run() {
             'even-scaled-trimmed.pdf',
             'combined.pdf',
         ].forEach(tmpFile => {
-            unlinkSync(tmpFile);
+            // todo DRY_RUN
+            console.log(`unlinkSync(${tmpFile})`);
+            // unlinkSync(tmpFile);
         });
     });
 

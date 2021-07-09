@@ -4,15 +4,15 @@ PDF magic for researching tasks
 
 ## Getting started
 
-`npm install` to get the libraries that we need.
-
 Install PDF libraries yourself:
 
 -   mutool
 -   pdftk
 -   pdfjam
 
-Find instructions via `npm start` (same as `node index.js --help`)
+`npm install` to get the js libraries that we need
+
+Find usage instructions via `npm start` (will call the script's `--help` section)
 
 ## Licensing
 
