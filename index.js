@@ -2,8 +2,10 @@
 
 const yargs = require('yargs/yargs');
 const {
+    // hide meta args
+    // (https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/)
     hideBin,
-} = require('yargs/helpers'); /* hide meta args (https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/) */
+} = require('yargs/helpers');
 
 const { sync } = require('glob');
 
@@ -54,9 +56,9 @@ function parseArguments(argsRaw) {
         })
         .wrap(110 /* give --help examples some space */)
         .example([
-            ["$0 -f '*.pdf' -s 0.9 -t 5 -h -n 1", 'For two paged scans like books'],
-            ["$0 -f '*.pdf' -s 0.9 -t 5 -h -n 1", 'For one paged scans (A5)'],
-            ["$0 -f '*.pdf' -s 0.9 -t 5 -h -n 0", 'For one paged scans (A4)'],
+            ["$0 -f '*.pdf' -s 0.9 -t 5 -h -n 2", 'For two paged scans like books'],
+            ["$0 -f '*.pdf' -s 0.9 -t 5 -n 2", 'For one paged scans (A5)'],
+            ["$0 -f '*.pdf' -s 0.9 -t 5", 'For one paged scans (A4)'],
         ])
         .epilog("Let's go ...").argv;
 }
@@ -177,7 +179,6 @@ async function run() {
     });
 
     return `
-
 
 
 Done. Created a new document with scale factor ${scaleFactor} and move pages ${trim}cm to the fold line...
